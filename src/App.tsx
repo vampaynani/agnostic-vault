@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+
+enum Selection {
+  Encrypt,
+  Decrypt,
+}
 
 function App() {
+  const [state, setState] = useState(Selection.Encrypt);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <div>
+        <button onClick={() => setState(Selection.Encrypt)}>Encrypt</button>
+        <button onClick={() => setState(Selection.Decrypt)}>Decrypt</button>
+      </div>
+      {state === Selection.Encrypt && (
+        <div>
+          <label>File name</label>
+          <input id="filename-input" type="text" />
+          <label>Text</label>
+          <textarea cols={10} rows={5} id="text-input"></textarea>
+          <label>Password</label>
+          <input id="password-input" type="text" />
+          <button>Encrypt Now</button>
+        </div>
+      )}
+      {state === Selection.Decrypt && (
+        <div id="drag-file" className="container">
+          <div className="border">
+            <p>Arrastra tu archivo aquí</p>
+          </div>
+        </div>
+      )}
+    </main>
   );
 }
 
