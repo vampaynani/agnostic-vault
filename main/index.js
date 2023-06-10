@@ -1,8 +1,7 @@
 const url = require("url");
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
-// const handleOnSubmit = require("./handlers/on_submit");
-// const handleOnDrop = require("./handlers/on_drop");
+const submitHandler = require("./handlers/submit");
 
 let mainWindow;
 
@@ -11,7 +10,7 @@ function createWindow() {
     width: 500,
     height: 400,
     webPreferences: {
-      preload: path.join(__dirname, "preload.ts"),
+      preload: path.join(__dirname, "preload.js"),
     },
   });
 
@@ -27,7 +26,7 @@ function createWindow() {
   //Enable when developing
   mainWindow.openDevTools();
 
-  // handleOnSubmit();
+  submitHandler();
   // handleOnDrop();
 }
 

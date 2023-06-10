@@ -2,7 +2,7 @@
   "name": "agnostic-vault",
   "version": "0.1.0",
   "private": true,
-  "main": "main.ts",
+  "main": "main/index.js",
   "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -12,6 +12,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "crypto-js": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -48,6 +49,7 @@
     "concurrently": "^8.1.0",
     "electron": "^25.0.1",
     "electron-builder": "^23.6.0",
+    "tailwindcss": "^3.3.2",
     "wait-on": "^7.0.1"
   }
 }

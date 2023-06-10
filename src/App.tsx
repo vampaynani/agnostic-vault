@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import Form from "./Form";
 
 enum Selection {
@@ -10,10 +9,20 @@ enum Selection {
 function App() {
   const [state, setState] = useState(Selection.Encrypt);
   return (
-    <main className="App">
-      <div>
-        <button onClick={() => setState(Selection.Encrypt)}>Encrypt</button>
-        <button onClick={() => setState(Selection.Decrypt)}>Decrypt</button>
+    <main className="h-screen w-screen bg-blue-700">
+      <div className="bg-blue-600 flex justify-end">
+        <button
+          className="p-2 text-white transition-colors hover:bg-white/10"
+          onClick={() => setState(Selection.Encrypt)}
+        >
+          Encrypt
+        </button>
+        <button
+          className="p-2 text-white transition-colors hover:bg-white/10"
+          onClick={() => setState(Selection.Decrypt)}
+        >
+          Decrypt
+        </button>
       </div>
       {state === Selection.Encrypt && <Form />}
       {state === Selection.Decrypt && (

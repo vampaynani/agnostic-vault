@@ -12,7 +12,6 @@ const { contextBridge, ipcRenderer } = require("electron");
 // });
 
 contextBridge.exposeInMainWorld("mainProcess", {
-  onSubmit: (fileName: string, text: string, password: string) =>
-    ipcRenderer.invoke("onSubmit", fileName, text, password),
-  onDrop: (path: string) => ipcRenderer.invoke("onDrop", path),
+  onSubmit: (text, password) => ipcRenderer.invoke("onSubmit", text, password),
+  onDrop: (path) => ipcRenderer.invoke("onDrop", path),
 });
