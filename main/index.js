@@ -8,7 +8,7 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 500,
-    height: 400,
+    height: 360,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
@@ -24,7 +24,7 @@ function createWindow() {
   mainWindow.loadURL(startUrl);
 
   //Enable when developing
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
 
   submitHandler();
   // handleOnDrop();

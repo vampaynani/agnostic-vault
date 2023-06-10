@@ -1,11 +1,19 @@
-const { ipcMain } = require("electron");
+const { ipcMain, dialog } = require("electron");
+const { textToHex } = require("../lib/cypher.js");
+const file = require("../lib/file.js");
+const prompt = require("native-prompt");
 
 module.exports = () =>
-  ipcMain.handle("onSubmit", (_event, text, password) => {
-    console.log(text, password);
-    // const hex = text_to_hex(text, password);
-    // file.save(fileName, hex);
-
-    // const decrypted = hex_to_text(hex, password);
-    // console.log(fileName, text, password, hex, decrypted);
+  ipcMain.handle("onSubmit", async (_event, text) => {
+    const password = await prompt(
+      "Encrypt text with password",
+      "Which will be the password to encrypt the text with",
+      { mask: true }
+    );
+    const hex = textToHex(text, password);
+    const filePath = await file.save(hex);
+    dialog.showMessageBox(null, {
+      message: "File saved successfully",
+      detail: `Your file has been saved at ${filePath}`,
+    });
   });

@@ -5,12 +5,8 @@ function submitData(e: SyntheticEvent<HTMLFormElement>) {
   const form = e.currentTarget;
   const formElements = form.elements as typeof form.elements & {
     text: { value: string };
-    password: { value: string };
   };
-  window.mainProcess.onSubmit(
-    formElements.text.value,
-    formElements.password.value
-  );
+  window.mainProcess.onSubmit(formElements.text.value);
 }
 
 function Label({ children }: { children: ReactNode }) {
@@ -32,14 +28,6 @@ function Form() {
           cols={10}
           rows={5}
         ></textarea>
-      </div>
-      <div>
-        <Label>Password</Label>
-        <input
-          className="w-full rounded-md p-4"
-          name="password"
-          type="password"
-        />
       </div>
       <button className="block w-full rounded-md py-2 mt-2 text-center bg-slate-800 text-stone-400">
         Encrypt Now

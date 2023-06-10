@@ -1,5 +1,5 @@
 interface Window {
   mainProcess: {
-    onSubmit: (text: string, password: string) => void;
+    onSubmit: (text: string) => void;
   };
 }
