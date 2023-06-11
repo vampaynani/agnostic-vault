@@ -1,0 +1,7 @@
+## Context
+
+Storing private keys in cloud storage services such as Google Drive or Dropbox is not recommended due to potential security risks, lack of control, and potential regulatory violations. It is preferable to use more secure methods, such as safe and reliable cryptocurrency wallets or offline backups on encrypted devices. Private keys are critical to the security of your cryptocurrency and other sensitive information, so extra steps must be taken to protect them from loss or compromise.
+
+On the other hand, recovery keys or backup codes for two-factor authentication (2FA) are essential to guarantee access to your accounts in case of loss of your 2FA device. It is recommended to store them securely using methods such as physical storage in a secure location, encrypted storage on external devices, use of trusted password managers, or cloud storage services with strong encryption. In all cases, it is important to protect these codes against unauthorized access and to have additional backup copies in case of loss or damage.
+
+In summary, it is necessary to be security conscious when storing private keys in the cloud, opting for more secure methods of storage. For 2FA recovery keys, secure methods of physical storage, encryption or trusted services must be used, ensuring protection and access in case of need. It is always important to maintain the integrity and security of these critical elements to protect information and digital assets.

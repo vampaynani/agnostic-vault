@@ -21,12 +21,11 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "react:start": "react-scripts start",
+    "react:build": "react-scripts build",
+    "react:test": "react-scripts test",
     "electron": "electron .",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && ELECTRON_START_URL=http://localhost:3000 electron .\""
+    "electron:dev": "concurrently \"BROWSER=none yarn react:start\" \"wait-on http://localhost:3000 && ELECTRON_START_URL=http://localhost:3000 yarn electron\""
   },
   "eslintConfig": {
     "extends": [
