@@ -9,5 +9,6 @@ interface Window {
     listFiles: () => void;
     selectFilename: (filename: string) => void;
     onFileDecrypt: (onFileDecryptCallback) => void;
+    copyToClipboard: (data: string) => void;
   };
 }

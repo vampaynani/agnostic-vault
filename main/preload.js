@@ -11,4 +11,5 @@ contextBridge.exposeInMainWorld("electronApi", {
     ipcRenderer.on("onFileDecrypt", (_event, decryptedData) =>
       callback(decryptedData)
     ),
+  copyToClipboard: (data) => ipcRenderer.invoke("copyToClipboard", data),
 });

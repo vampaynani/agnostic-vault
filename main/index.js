@@ -5,6 +5,7 @@ const submitHandler = require("./handlers/submit");
 const dropHandler = require("./handlers/drop");
 const listHandler = require("./handlers/list");
 const selectFilenameHandler = require("./handlers/filename");
+const clipboardHandler = require("./handlers/clipboard");
 
 let mainWindow;
 
@@ -33,6 +34,7 @@ function createWindow() {
   dropHandler();
   listHandler(mainWindow);
   selectFilenameHandler(mainWindow);
+  clipboardHandler();
 }
 
 app.on("ready", createWindow);

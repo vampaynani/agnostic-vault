@@ -30,6 +30,16 @@ function List() {
       {decryptedData && (
         <div className="fixed top-0 left-0 h-screen w-screen bg-white/50 backdrop-blur-sm p-4 overflow-auto flex justify-center items-center">
           <button
+            onClick={() => window.electronApi.copyToClipboard(decryptedData)}
+            className="absolute top-0 left-0 mt-4 mr-4 text-blue-600"
+          >
+            [
+            <span className="hover:text-white transition-colors">
+              Copy to clipboard
+            </span>
+            ]
+          </button>
+          <button
             onClick={() => setDecryptedData("")}
             className="absolute top-0 right-0 mt-4 mr-4 text-blue-600"
           >
