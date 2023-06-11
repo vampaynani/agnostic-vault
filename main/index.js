@@ -2,6 +2,9 @@ const url = require("url");
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const submitHandler = require("./handlers/submit");
+const dropHandler = require("./handlers/drop");
+const listHandler = require("./handlers/list");
+const selectFilenameHandler = require("./handlers/filename");
 
 let mainWindow;
 
@@ -27,7 +30,9 @@ function createWindow() {
   // mainWindow.openDevTools();
 
   submitHandler();
-  // handleOnDrop();
+  dropHandler();
+  listHandler(mainWindow);
+  selectFilenameHandler(mainWindow);
 }
 
 app.on("ready", createWindow);

@@ -5,16 +5,18 @@ const prompt = require("native-prompt");
 
 module.exports = {
   save: async function (content) {
-    const filePath = `${app.getPath("home")}/agnostic-vault`;
-    if (!fs.existsSync(filePath)) {
-      fs.mkdirSync(filePath, "0744");
+    const dirPath = `${app.getPath("home")}/agnostic-vault`;
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, "0744");
     }
     const filename = await prompt(
       "Save file",
       "Type the name of the file where you will save the encrypted string"
     );
-    fs.writeFileSync(path.join(filePath, `${filename}.txt`), content);
-    return path.join(filePath, `${filename}.txt`);
+
+    const filePath = path.join(dirPath, `${filename}.txt`);
+    fs.writeFileSync(filePath, content);
+    return filePath;
   },
   read: function (filePath) {
     return fs.readFileSync(filePath, { encoding: "utf8" });

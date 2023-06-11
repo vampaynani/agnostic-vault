@@ -6,7 +6,7 @@ function submitData(e: SyntheticEvent<HTMLFormElement>) {
   const formElements = form.elements as typeof form.elements & {
     text: { value: string };
   };
-  window.mainProcess.onSubmit(formElements.text.value);
+  window.electronApi.onSubmit(formElements.text.value);
 }
 
 function Label({ children }: { children: ReactNode }) {
@@ -26,7 +26,7 @@ function Form() {
           className="w-full rounded-md p-4"
           name="text"
           cols={10}
-          rows={5}
+          rows={3}
         ></textarea>
       </div>
       <button className="block w-full rounded-md py-2 mt-2 text-center bg-slate-800 text-stone-400">
